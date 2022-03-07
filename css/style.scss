@@ -1,0 +1,81 @@
+@import "./mixin";
+@import "./variaveis";
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+width: 100vw;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: black;
+
+}
+
+.calculadora{
+    width: 100%;
+    max-width: 270px;
+    background-color: $cordefundo;
+    height: 350px;
+    @include align(center,center);
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+    border-radius: 30px;
+    box-shadow: 1px 3px 20px $cordetexto;
+}
+button{
+    border-radius: 30px;
+    border: 1px solid $cordetexto;
+    box-shadow: 1px 2px 6px $cordetexto;
+    background-color: $cordefundo;
+    color: $cordetexto;
+}
+
+button:hover{
+    box-shadow: 1px 2px 46px $cordetexto;
+    text-shadow: 1px 2px 4px $cordetexto;
+
+}
+
+.display{
+    width: 100%;
+    height: 50px;
+    background-color:$cordisplay ;
+    box-shadow: 1px 3px 9px $cordetexto;
+    border-radius: 30px;
+    text-align: right;
+    line-height: 50px;
+    padding-right: 15px;
+    color: $cordetexto;
+    font-size: 1.5rem;
+}
+
+
+.botoes{
+    width: 100%;
+    height: 240px;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows:repeat(7,auto) ;
+    gap: 3px
+
+
+    
+}
+
+
+
+button:nth-child(18){
+    grid-column-start:4;
+    grid-column-end: 3;
+}
+
+
+
