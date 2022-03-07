@@ -9,8 +9,14 @@
 </head>
 <body>
     <div class="calculadora">
-        <div class="display">123</div>
+        <div class="display"></div>
         <div class="botoes">
+            <button onclick="limparCalculo()">C</button>
+            <button onclick="back()"><<</button>
+            <button onclick="adiciona('/')">/</button>
+            <button onclick="adiciona('*')">X</button>
+            <button onclick="adiciona('+')">+</button>
+            <button onclick="adiciona('-')">-</button>
             <button onclick="adiciona('1')">1</button>
             <button onclick="adiciona('2')">2</button>
             <button onclick="adiciona('3')">3</button>
@@ -21,19 +27,45 @@
             <button onclick="adiciona('8')">8</button>
             <button onclick="adiciona('9')">9</button>
             <button onclick="adiciona('0')">0</button>
-            <button onclick="adiciona('/')">/</button>
-            <button onclick="adiciona('*')">X</button>
-            <button onclick="adiciona('+')">+</button>
-            <button onclick="adiciona('-')">-</button>
-            <button onclick="adiciona('+-')">+-</button>
             <button onclick="adiciona(',')">,</button>
-            <button onclick="adiciona()">C</button>
-            <button onclick="adiciona()">=</button>
-            <button onclick="adiciona()"><<</button>
-            <button onclick="adiciona()">CE</button>
+            <button onclick="calcula()">=</button>
+            
         </div>
 
     </div>
+
+
+    <script>
+     
+     
+
+     const adiciona = (valor) => {
+         let numero = document.querySelector(".display").innerHTML
+         document.querySelector(".display").innerHTML = numero  +=   valor 
+     }
+
+     function limparCalculo(){
+        document.querySelector(".display").innerHTML = ""
+     }
+
+     function back(){
+         let rest = document.querySelector(".display").innerHTML;
+          document.querySelector(".display").innerHTML = rest.substring(0,rest.length -1)
+     }
+
+     function calcula(){
+
+        let resultado = document.querySelector(".display").innerHTML;
+        if(resultado){
+            document.querySelector(".display").innerHTML = eval(resultado)
+        }else{
+            alert("valor invalido !")
+        }
+     }
+
+
+
+    </script>
     
 </body>
 </html>

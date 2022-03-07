@@ -35,6 +35,7 @@ button{
     box-shadow: 1px 2px 6px $cordetexto;
     background-color: $cordefundo;
     color: $cordetexto;
+    transition: .4s;
 }
 
 button:hover{
@@ -64,7 +65,9 @@ button:hover{
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows:repeat(7,auto) ;
-    gap: 3px
+    gap: 3px;
+    transition: .3s;
+    
 
 
     
